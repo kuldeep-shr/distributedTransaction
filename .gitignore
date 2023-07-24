@@ -1,0 +1,5 @@
+/orderService/orderServiceCompiled
+/deliveryService/deliveryServiceCompiled
+node_modules
+package-lock.json
+.env

@@ -1,0 +1,38 @@
+{
+  "name": "distributed-transactions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sampleData": "ts-node DB_AREA/sampleData.ts",
+    "start:ms1": "ts-node deliveryService/src/index.ts",
+    "start:ms2": "ts-node orderService/src/index.ts",
+    "build:ms1": "tsc -p deliveryService/src/",
+    "build:ms2": "tsc -p orderService/src/",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'npm run build:ms1 && npm run build:ms2'",
+    "start:services:ms1": "concurrently \"npm run build:ms1\" \"npm run start:ms1\" ",
+    "start:services": "concurrently \"npm run build:ms1\" \"npm run build:ms2\" \"npm run start:ms1\" \"npm run start:ms2\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.3.2",
+    "@types/sequelize": "^4.28.15",
+    "compression": "^1.7.4",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.5.2",
+    "sequelize": "^6.32.1",
+    "sequelize-typescript": "^2.1.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.2",
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22"
+  }
+}

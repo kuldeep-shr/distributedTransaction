@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "service_one/*": ["deliveryService/*"],
+      "service_two/*": ["orderService/*"]
+    }
+  },
+  "include": ["deliveryService/", "orderService/"]
+  // "exclude": ["node_modules"]
+}
